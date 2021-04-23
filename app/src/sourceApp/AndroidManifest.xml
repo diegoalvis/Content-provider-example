@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.diegoalvis.exposedcontent">
+
+    <!-- Find the generated AndroidManifest here: app\build\intermediates\packaged_manifests\sourceAppDebug\AndroidManifest.xml -->
+
+    <!-- We don't need uses-permission for the permissions which we declare and create -->
+    <permission
+        android:name="${packageName}.permission.public.READ"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="${packageName}.permission.signature.READ"
+        android:protectionLevel="signature" />
+
+    <application>
+        <provider
+            android:name=".StaticDataProvider"
+            android:authorities="${packageName}.provider.permission.signature"
+            android:exported="true"
+            android:permission="${packageName}.permission.signature.READ" />
+        <provider
+            android:name=".DbDataProvider"
+            android:authorities="${packageName}.provider.permission.public"
+            android:exported="true"
+            android:permission="${packageName}.permission.public.READ" />
+        <provider
+            android:name=".PublicProvider"
+            android:authorities="${packageName}.provider.public"
+            android:exported="true" />
+    </application>
+
+</manifest>
