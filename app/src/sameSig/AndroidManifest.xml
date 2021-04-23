@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.diegoalvis.exposedcontent">
+
+    <!-- Required in app in other to read, only works if this app is signed by same signature since this permission is signature level -->
+    <!-- Don't use ${packageName} here, as these permissions are of another app -->
+    <uses-permission android:name="com.diegoalvis.exposedcontent.sourceApp.permission.public.READ" />
+    <uses-permission android:name="com.diegoalvis.exposedcontent.sourceApp.permission.signature.READ" />
+
+</manifest>
